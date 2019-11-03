@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  proxy:
+    restart: always
+    networks:
+    - dev_network
+    volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+networks:
+  dev_network:
+    external:
+      name: dev_network
